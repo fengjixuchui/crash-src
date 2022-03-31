@@ -17,6 +17,7 @@ static int linklist_init(void)
 {
     struct student *stu1, *stu2, *stu3, *stu4;
     struct student *stu;
+    struct student *stu_panic_trigger;
 
     // init a list head
     LIST_HEAD(stu_head);
@@ -59,12 +60,11 @@ static int linklist_init(void)
 
     // delete a entry stu2
     list_del(&stu2->list);
-    printk(KERN_INFO "prev: %x %p\n", stu2->list.prev, stu2->list.prev);
-    printk(KERN_INFO "next: %x %p\n", stu2->list.next, stu2->list.next);
-    struct student * stu_panic = container_of(stu2->list.next, struct student, list);
-    stu_panic->name = "hacker";
-	
 
+    printk(KERN_INFO "prev: %lx %p\n", (long int)(stu2->list.prev), stu2->list.prev);
+    printk(KERN_INFO "next: %lx %p\n", (long int)(stu2->list.next), stu2->list.next);
+    stu_panic_trigger = container_of(stu2->list.next, struct student, list);
+    stu_panic_trigger->name = "hacker";
 
     list_for_each_entry(stu, &stu_head, list)
     {

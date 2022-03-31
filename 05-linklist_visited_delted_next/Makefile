@@ -1,4 +1,4 @@
-MODULE_NAME := linklist
+MODULE_NAME := linklist_visited_delted_next
 obj-m += $(MODULE_NAME).o
 
 $(MODULE_NAME).ko:
