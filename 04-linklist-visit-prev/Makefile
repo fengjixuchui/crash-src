@@ -1,4 +1,4 @@
-MODULE_NAME := nullpointer
+MODULE_NAME := linklist
 obj-m += $(MODULE_NAME).o
 
 $(MODULE_NAME).ko:
