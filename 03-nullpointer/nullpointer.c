@@ -15,3 +15,5 @@ void cleanup_module(void)
 {
 	printk(KERN_INFO "Goodbye panic\n");
 }
+
+MODULE_LICENSE("GPL");
