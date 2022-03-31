@@ -1,4 +1,4 @@
-MODULE_NAME := hello
+MODULE_NAME := panic
 obj-m += $(MODULE_NAME).o
 
 all:
