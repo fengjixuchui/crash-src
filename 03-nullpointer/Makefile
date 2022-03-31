@@ -1,7 +1,7 @@
-MODULE_NAME := hello
+MODULE_NAME := nullpointer
 obj-m += $(MODULE_NAME).o
 
-all:
+$(MODULE_NAME).ko:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
 
 clean:
@@ -12,3 +12,6 @@ insmod:
 
 rmmod:
 	rmmod $(MODULE_NAME).ko
+
+dis: $(MODULE_NAME).ko
+	objdump -d -S $(MODULE_NAME).ko > $(MODULE_NAME).dis

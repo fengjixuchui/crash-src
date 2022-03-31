@@ -1,7 +1,7 @@
 #include <linux/module.h>
 #include <linux/kernel.h>
 
-int *p = NULL;
+char *p = NULL;
 
 int init_module(void) 
 {
@@ -15,3 +15,5 @@ void cleanup_module(void)
 {
 	printk(KERN_INFO "Goodbye panic\n");
 }
+
+MODULE_LICENSE("GPL");
