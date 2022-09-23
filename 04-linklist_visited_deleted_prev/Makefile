@@ -1,4 +1,4 @@
-MODULE_NAME := nullpointer
+MODULE_NAME := linklist_visited_delted_pre
 obj-m += $(MODULE_NAME).o
 
 $(MODULE_NAME).ko:
